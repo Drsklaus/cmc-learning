@@ -21,7 +21,7 @@ metadata:
   name: nginx-deployment
   namespace: ns-bsbm-o-sre-playground
   labels:
-    app: nginx
+    app: nginx-github
 spec:
   replicas: 2 
   selector:
