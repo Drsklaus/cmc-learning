@@ -7,10 +7,10 @@ data:
   index.html: |
     <html>
       <head>
-        <title>Hello from Nginx in OpenShift</title>
+        <title>Hello from Nginx generated from GitHub repo</title>
       </head>
       <body>
-        <h1>Hello world from Klaas!</h1>
+        <h1>Hello world from Github Klaas!</h1>
         <p>Desperatly learning Kubernetes, OpenShift, ArgoCD, Azure and more...</p>
       </body>
     </html>
