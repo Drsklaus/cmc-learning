@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: nginx-github
-  name: nginx-service-fromgithub
+  name: nginx-service-github
   namespace: ns-bsbm-o-sre-playground
 spec:
   selector:
