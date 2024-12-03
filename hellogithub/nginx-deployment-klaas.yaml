@@ -26,6 +26,7 @@ spec:
   replicas: 2 
   selector: #required for a ReplicaSet (but not for the older ReplicationController)
     matchLabels:
+      app: nginx-github
       type: nginx-pod
   template: 
     #pod definition 
