@@ -18,7 +18,7 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx-deployment-fromgithub
   namespace: ns-bsbm-o-sre-playground
   labels:
     app: nginx-github
