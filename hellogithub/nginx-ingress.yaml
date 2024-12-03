@@ -18,5 +18,5 @@ spec:
           service:
             name: nginx-service-github
             port:
-              number: 8081
+              number: 8080
 
