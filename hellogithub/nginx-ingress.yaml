@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nginx-server-ingress-gitlab
+  name: nginx-server-ingress-github
   namespace: ns-bsbm-o-sre-playground
   annotations:
     route.openshift.io/termination: edge
