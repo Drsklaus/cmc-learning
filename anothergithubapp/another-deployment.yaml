@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: index-html-configmap2
+  namespace: ns-bsbm-o-sre-playground 
+data:
+  index.html: |
+    <html>
+      <head>
+        <title>Hello Another nginx application from GitHub repo</title>
+      </head>
+      <body>
+        <h1>Just another application form ythe GitHub repo!</h1>
+        <p>Making some progress with Kubernetes, ArgoCD and OpenShift</p>
+      </body>
+    </html>
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: another-github-app
+  namespace: ns-bsbm-o-sre-playground
+  labels:
+    app: another-github-app
+spec:
+  replicas: 3
+  selector: #required for a ReplicaSet (but not for the older ReplicationController)
+    matchLabels:
+      app: another-github-app
+      type: nginx-pod
+  template: 
+    #pod definition 
+    metadata:
+      labels:
+        app: another-github-app
+        type: nginx-pod
+    spec:
+      containers:
+      - name: nginx
+        image: nginxinc/nginx-unprivileged:stable-bookworm-perl
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: config-volume-nginx2
+          mountPath: /usr/share/nginx/html
+
+      volumes:
+      - name: config-volume-nginx2
+        configMap:
+          name: index-html-configmap2
+

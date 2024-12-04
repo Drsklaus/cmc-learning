@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nginx-github
+  name: another-service-github
+  namespace: ns-bsbm-o-sre-playground
+spec:
+  selector: #to identify the PODS
+    app: another-github-app
+    type: nginx-pod
+  type: ClusterIP
+  ports:
+  - port: 8081 #only required field
+    protocol: TCP
+    targetPort: 8080
