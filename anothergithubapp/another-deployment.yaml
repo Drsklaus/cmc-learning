@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: index-html-configmap2
+  name: index-html-configmap3
   namespace: ns-bsbm-o-sre-playground 
 data:
   index.html: |
@@ -47,5 +47,5 @@ spec:
       volumes:
       - name: config-volume-nginx2
         configMap:
-          name: index-html-configmap2
+          name: index-html-configmap3
 
